@@ -1,0 +1,588 @@
+    /* animations */
+    
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes textwhite {
+        0% {}
+        100% {
+            color: white;
+        }
+    }
+    
+    * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+        font-family: Lato, Arial, sans-serif;
+    }
+    
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    html {
+        width: 100%;
+    }
+    
+    h1 {
+        font-weight: normal;
+    }
+    
+    .clearfloat {
+        clear: both;
+    }
+    
+    .main {
+        /*	background-image: url("images/headerbackground.svg");
+	background-position: bottom right;
+	background-size: cover;*/
+        height: 100vh;
+        width: auto;
+        /*background-color: #9B6A6C;*/
+    }
+    /* navbar buttons */
+    
+    #oauth-signin,
+    #sign-out-link,
+    #create-page-link {
+        display: none;
+    }
+    
+    #sign-out-link,
+    #create-page-link,
+    #logo-link {
+        padding: 15px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+    
+    #sign-out-link:hover,
+    #create-page-link:hover,
+    #logo-link:hover {
+        box-shadow: 0 4px 12px 4px lightgray;
+    }
+    /* alerts */
+    
+    .alert-banner {
+        width: 100%;
+        height: 60px;
+        position: fixed;
+        top: 90px;
+        z-index: 1;
+        text-align: center;
+        background-color: #9B6A6C;
+        color: #EBFCFB;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .refresh-button {
+        border: none;
+        background-color: #EBFCFB;
+        padding: 10px 10px;
+        border-radius: 7.5px;
+        margin-left: 10px;
+        transition: all 0.8s;
+    }
+    
+    .refresh-button:hover {
+        background-color: #CEDFD9;
+    }
+    
+    .main-nav {
+        width: 100%;
+        height: 110px;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+        transition: all 600ms ease-in-out;
+    }
+    
+    .small {
+        height: 110px;
+        background-color: #EBFCFB;
+        box-shadow: 0 2px 12px 2px rgba(0, 0, 0, .18);
+    }
+    
+    .navbar {
+        width: auto;
+        padding: 15px;
+        padding-right: 30px;
+        padding-top: 33px;
+        float: right;
+        opacity: 1;
+    }
+    
+    .nav-fade-in-animation {
+        animation: fadeIn 1.2s 0s 1 forwards;
+    }
+    
+    .tags-fade-in-animation {
+        animation: fadeIn 1.2s 0.4s 1 forwards;
+    }
+    
+    .workouts-fade-in-animation {
+        animation: fadeIn 1.2s 0.6s 1 forwards;
+    }
+    
+    .create-workout-link,
+    .profile-link {
+        text-decoration: none;
+        font-size: 1.1em;
+        color: #5F5449;
+        display: block;
+        border-radius: 5px;
+        float: right;
+        line-height: 0.85;
+        padding: 10px;
+        position: relative;
+        cursor: pointer;
+    }
+    
+    .logo {
+        width: 65px;
+        height: 100%;
+        margin-left: 30px;
+        float: left;
+        opacity: 1;
+        display: flex;
+        align-items: center;
+    }
+    
+    .logo div {
+        font-family: PT Sans Caption, sans-serif;
+        text-decoration: none;
+        color: #5F5449;
+        font-size: 2em;
+    }
+    
+    .red-text {
+        font-family: PT Sans Caption, sans-serif;
+        text-decoration: none;
+        color: #9B6A6C;
+    }
+    
+    .navbar-buffer {
+        width: 100%;
+        height: 110px;
+    }
+    
+    .tags-container {
+        background-color: #EBFCFB;
+    }
+    
+    .tags {
+        padding: 40px 40px;
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: flex-end;
+    }
+    
+    .tag {
+        margin: 10px 15px;
+        width: 150px;
+        height: 70px;
+        background-color: #EBFCFB;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.7s;
+        border-radius: 8px;
+        opacity: 0;
+    }
+    
+    .tag h2 {
+        font-weight: normal;
+    }
+    
+    .tag:hover {
+        box-shadow: 0 4px 12px 4px lightgray;
+    }
+    
+    .workouts-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        padding-top: 100px;
+    }
+    
+    .workouts {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        max-width: 1050px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: flex-start;
+    }
+    
+    .workout {
+        width: 250px;
+        height: 300px;
+        /* changed */
+        background-color: #9B6A6C;
+        margin: 30px 50px;
+        transition: 0.7s;
+        border-radius: 8px;
+        text-align: center;
+        opacity: 0;
+        cursor: pointer;
+    }
+    
+    .workout-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px 8px 0px 0px;
+    }
+    
+    .workout:hover {
+        box-shadow: 0 7px 24px 7px lightgray;
+    }
+    
+    .workout-top-half {
+        height: 50%;
+        width: 100%;
+        border-radius: 8px 8px 0px 0px;
+        background-color: #EBFCFB;
+    }
+    
+    .workout-bottom-half {
+        height: 100%;
+        /* added */
+        padding: 20px 15px;
+        position: relative;
+        /* added */
+    }
+    
+    .workout-title {
+        font-size: 27px;
+        margin-bottom: 8px;
+    }
+    
+    .workout-date {
+        font-size: 14px;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+    }
+    
+    .workout-author {
+        font-size: 14px;
+        margin-bottom: 15px;
+        margin-top: 15px;
+    }
+    
+    .workout-caption {
+        font-size: 14px;
+        display: inline-block;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        padding-bottom: 1px;
+        padding: 6px 14px;
+        color: white;
+        background-color: #9B6A6C;
+    }
+    
+    .workout-description {}
+    /* description */
+    
+    .description-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .description-card {
+        width: auto;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .first-half {
+        width: 400px;
+        height: auto;
+        border-radius: 15px;
+        padding: 50px 0px;
+        text-align: center;
+        background-color: #EBFCFB;
+    }
+    
+    .second-half {
+        width: 500px;
+        height: auto;
+    }
+    
+    .description-title {
+        font-size: 35px;
+        margin-bottom: 8px;
+    }
+    
+    .description-date {
+        font-size: 19px;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+    }
+    
+    .description-author {
+        font-size: 19px;
+        margin-bottom: 15px;
+    }
+    
+    .description-caption {
+        font-size: 20px;
+        display: inline-block;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        padding-bottom: 1px;
+        padding: 7px 17px;
+        color: white;
+        background-color: #9B6A6C;
+    }
+    
+    .upvotes {
+        position: absolute;
+        /* centers it */
+        bottom: 10px;
+        left: 65px;
+        margin-top: 20px;
+    }
+    
+    .description-card .upvotes {
+        position: static;
+    }
+    
+    .upvotes i {
+        margin: 10px;
+        font-size: 30px;
+    }
+    
+    .fa-chevron-up {
+        position: relative;
+        transition-duration: 0.5s;
+    }
+    
+    .fa-chevron-up:hover {
+        transform: translate(0px, -5px)
+    }
+    
+    .fa-chevron-down {
+        position: relative;
+        transition-duration: 0.5s;
+    }
+    
+    .fa-chevron-down:hover {
+        transform: translate(0px, 5px)
+    }
+    
+    .upvote-count {
+        color: #ef1a1a;
+        ;
+    }
+    
+    .second-half {
+        padding-left: 50px;
+    }
+    
+    .second-half .tags {
+        margin: 0px;
+        padding-left: 0px;
+        justify-content: flex-start
+    }
+    
+    .second-half .tag {
+        margin-left: 0px;
+        margin-bottom: 0px;
+        margin-top: 0px;
+        width: 100px;
+        height: 50px;
+        opacity: 1;
+        background-color: #EBFCFB;
+    }
+    
+    .second-half .tag h2 {
+        font-size: 1.2em;
+    }
+    
+    .description p {
+        font-size: 1.1em;
+    }
+    /* create workout */
+    
+    .create-workout-container {
+        width: 100%;
+        height: 100vh;
+        padding-top: 200px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .create-workout-card {
+        width: 400px;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 15px;
+        background-color: #EBFCFB;
+        padding: 50px 30px 0px 30px;
+    }
+    
+    .create-workout-form input,
+    .create-workout-form textarea {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 30px;
+        border: none;
+        padding: 10px;
+        border-radius: 10px;
+        width: 300px;
+    }
+    
+    .create-workout-form textarea {
+        height: 400px;
+    }
+    
+    .submit-button {
+        background-color: #B09398;
+        color: white;
+        transition: all 0.5s;
+    }
+    
+    .submit-button:hover {
+        background-color: #9B6A6C;
+    }
+    
+    .checkboxes {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 300px;
+        margin: 20px;
+    }
+    
+    .container {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 22px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        width: 150px;
+    }
+    
+    .container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+    
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: #ccc;
+    }
+    
+    .container:hover input~.checkmark {
+        background-color: #ccc;
+    }
+    
+    .container input:checked~.checkmark {
+        background-color: #9B6A6C;
+    }
+    
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+    
+    .container input:checked~.checkmark:after {
+        display: block;
+    }
+    
+    .container .checkmark:after {
+        left: 9px;
+        top: 5px;
+        width: 5px;
+        height: 10px;
+        border: solid #EBFCFB;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+    /* pre-loader */
+    
+    .loader-wrapper {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #EBFCFB;
+        z-index: 2;
+    }
+    
+    .loader {
+        display: block;
+        width: 60px;
+        height: 60px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 40vh;
+    }
+    
+    .loader:after {
+        content: " ";
+        display: block;
+        width: 64px;
+        height: 64px;
+        margin: 8px;
+        border-radius: 50%;
+        border: 6px solid #515151;
+        border-color: #515151 transparent #515151 transparent;
+        animation: lds-dual-ring 1.2s linear infinite;
+    }
+    
+    @keyframes lds-dual-ring {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }

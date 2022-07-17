@@ -1,3 +1,63 @@
+<?php
+	// Step 1: Establish DB connection
+	$host = "303.itpwebdev.com";
+	$user = "nqpham_db_user";
+	$password = "itp303fall2021";
+	$db = "nqpham_dvd_db";
+
+	// Connect to the DB by creating an instance of the MySQLI class
+	$mysqli = new mysqli($host, $user, $password, $db);
+
+	if ( $mysqli->connect_errno) {
+		echo $mysqli->connect_error;
+		// Exit the program if there's an error. There's no reason to continue the program.
+		exit();
+	}
+
+	$mysqli->set_charset('utf8');
+	// Genres:
+	$sql_genres = "SELECT * FROM genres;";
+	$results_genres = $mysqli->query($sql_genres);
+	if ( $results_genres == false ) {
+		echo $mysqli->error;
+		exit();
+	}
+
+	// Ratings:
+	$sql_ratings = "SELECT * FROM ratings;";
+	$results_ratings = $mysqli->query($sql_ratings);
+	if ( $results_ratings == false ) {
+		echo $mysqli->error;
+		exit();
+	}
+
+	// Labels:
+	$sql_labels = "SELECT * FROM labels;";
+	$results_labels = $mysqli->query($sql_labels);
+	if ( $results_labels == false ) {
+		echo $mysqli->error;
+		exit();
+	}
+
+	// Formats:
+	$sql_formats = "SELECT * FROM formats;";
+	$results_formats = $mysqli->query($sql_formats);
+	if ( $results_formats == false ) {
+		echo $mysqli->error;
+		exit();
+	}
+
+	// Sounds:
+	$sql_sounds = "SELECT * FROM sounds;";
+	$results_sounds = $mysqli->query($sql_sounds);
+	if ( $results_sounds == false ) {
+		echo $mysqli->error;
+		exit();
+	}
+
+	$mysqli->close();
+
+?>
 <!DOCTYPE html>
 <html>
 
